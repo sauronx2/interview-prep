@@ -2,6 +2,12 @@
 
 Сучасний веб-додаток для підготовки до інтерв'ю на позицію QA Automation Engineer. Створений з використанням Next.js 15, TypeScript, і Tailwind CSS.
 
+## 🌐 Live Demo
+
+**[View Live Application](https://sauronx2.github.io/interview-prep/)**
+
+Deployed on GitHub Pages with automatic static site generation.
+
 ## 🚀 Features
 
 - **74 питання** з детальними відповідями українською мовою
@@ -70,7 +76,7 @@ make rebuild    # Clean + Build + Start
 - **Styling**: Tailwind CSS 3.4
 - **Icons**: Lucide React
 - **Fonts**: Geist Sans & Geist Mono
-- **Deployment**: Docker
+- **Deployment**: Docker + GitHub Pages
 
 ## 📂 Project Structure
 
@@ -116,6 +122,39 @@ interview-prep/
 - **Non-root user** for security
 - **Health checks** for reliability
 - **Production-ready** configuration
+
+## 🚀 GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages using static export.
+
+### How it works
+
+1. Next.js builds static HTML/CSS/JS files to `/docs` folder
+2. GitHub Pages serves content from `/docs` on `master` branch
+3. Site is available at: https://sauronx2.github.io/interview-prep/
+
+### Rebuild and Deploy
+
+```bash
+# Install dependencies (first time only)
+npm install
+
+# Build static site
+npm run build
+
+# Commit and push changes
+git add docs/
+git commit -m "chore: rebuild static site"
+git push origin master
+```
+
+The site will automatically update within 1-2 minutes after pushing to GitHub.
+
+### Configuration Files
+
+- `next.config.ts` - Static export with `/interview-prep` base path
+- `.nojekyll` - Prevents Jekyll processing on GitHub Pages
+- `docs/` - Output directory for static files
 
 ## 📄 License
 
