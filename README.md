@@ -152,9 +152,17 @@ The site will automatically update within 1-2 minutes after pushing to GitHub.
 
 ### Configuration Files
 
-- `next.config.ts` - Static export with `/interview-prep` base path
+- `next.config.ts` - Static export configuration (no basePath needed for project repos)
 - `.nojekyll` - Prevents Jekyll processing on GitHub Pages
 - `docs/` - Output directory for static files
+- `scripts/deploy.sh` - Automated build and deployment script
+
+### Troubleshooting
+
+**GitHub Pages shows old version after push?**
+- GitHub Pages CDN caching can take 5-30 minutes to update
+- Verify files in repository are correct: check raw content on GitHub
+- Force refresh browser: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)
 
 ## 📄 License
 
