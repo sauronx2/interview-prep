@@ -1,0 +1,126 @@
+# Interview Preparation - QA Automation Engineer
+
+Сучасний веб-додаток для підготовки до інтерв'ю на позицію QA Automation Engineer. Створений з використанням Next.js 15, TypeScript, і Tailwind CSS.
+
+## 🚀 Features
+
+- **74 питання** з детальними відповідями українською мовою
+- **8 категорій**: Java Core, Design Patterns, Framework Architecture, API/UI Automation, SQL, Stream Tasks, Mobile Automation
+- **Мінімалістичний дизайн** з відмінною типографікою
+- **Dark mode** для комфортного читання
+- **Responsive design** - працює на всіх пристроях
+- **Docker-ready** - запуск в один клік
+
+## 📋 Requirements
+
+- Node.js 20+
+- Docker & Docker Compose (для containerized deployment)
+- Make (опціонально, для зручності)
+
+## 🛠️ Quick Start
+
+### Метод 1: Docker (Рекомендовано)
+
+```bash
+# Клонувати та перейти в директорію
+cd interview-prep
+
+# Встановити та запустити (один клік)
+make up
+
+# Або без Make:
+docker-compose up -d --build
+
+# Додаток доступний на http://localhost:3000
+```
+
+### Метод 2: Local Development
+
+```bash
+# Встановити залежності
+npm install
+
+# Запустити dev сервер
+npm run dev
+
+# Додаток доступний на http://localhost:3000
+```
+
+## 📦 Makefile Commands
+
+```bash
+make help       # Показати всі доступні команди
+make install    # Встановити npm dependencies
+make dev        # Запустити development server
+make build      # Зібрати Docker image
+make start      # Запустити в Docker
+make stop       # Зупинити контейнер
+make restart    # Перезапустити
+make logs       # Показати логи
+make status     # Статус контейнера
+make clean      # Видалити всі контейнери/images
+make up         # Build + Start (один клік)
+make rebuild    # Clean + Build + Start
+```
+
+## 🏗️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript 5.7
+- **Styling**: Tailwind CSS 3.4
+- **Icons**: Lucide React
+- **Fonts**: Geist Sans & Geist Mono
+- **Deployment**: Docker
+
+## 📂 Project Structure
+
+```
+interview-prep/
+├── app/
+│   ├── layout.tsx       # Root layout
+│   ├── page.tsx         # Home page
+│   └── globals.css      # Global styles
+├── components/
+│   ├── QuestionCard.tsx      # Q&A card component
+│   └── CategorySection.tsx   # Category section
+├── lib/
+│   ├── types.ts         # TypeScript types
+│   └── data.ts          # Interview Q&A data
+├── Dockerfile           # Multi-stage Docker build
+├── docker-compose.yml   # Docker Compose config
+├── Makefile            # One-click commands
+└── package.json        # Dependencies
+```
+
+## 🎨 Design Features
+
+- **Color Palette**: Приємні сині та фіолетові відтінки
+- **Typography**: Geist font family для відмінної читабельності
+- **Animations**: Smooth transitions та micro-interactions
+- **Accessibility**: WCAG compliant
+
+## 📝 Categories
+
+1. ☕ **Java Core** - OOP, Streams, Functional Interfaces
+2. 🏗️ **Design Patterns** - GoF & AQA Patterns
+3. 🏛️ **Framework Architecture** - Components, Structure
+4. 🔌 **API Automation** - RestAssured, HTTP
+5. 🖥️ **UI Automation** - Selenium WebDriver
+6. 🗄️ **SQL Queries** - Joins, Subqueries
+7. 🧮 **Stream & Logic Tasks** - Coding challenges
+8. 📱 **Mobile Automation** - Appium Overview
+
+## 🐳 Docker Details
+
+- **Multi-stage build** for optimized image size
+- **Non-root user** for security
+- **Health checks** for reliability
+- **Production-ready** configuration
+
+## 📄 License
+
+MIT
+
+## 👨‍💻 Author
+
+Created with Next.js, TypeScript, and Tailwind CSS

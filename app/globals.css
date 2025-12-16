@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'highlight.js/styles/atom-one-dark.css';
+
+:root {
+  /* Темна тема з синьо-зелено-сірою палітрою */
+  --background: #0a0f1e;
+  --background-secondary: #111827;
+  --foreground: #e5e7eb;
+  --foreground-muted: #9ca3af;
+
+  --primary: #06b6d4;
+  --primary-hover: #0891b2;
+  --accent: #10b981;
+  --accent-hover: #059669;
+
+  --border: #374151;
+  --border-light: #4b5563;
+
+  --code-bg: #0d1117;
+  --code-border: #1e293b;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - темна тема */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Code blocks styling - темна тема з меншим шрифтом */
+pre {
+  @apply rounded-lg p-3 overflow-x-auto;
+  background: #0d1117;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+}
+
+code {
+  @apply text-xs font-mono px-1.5 py-0.5 rounded font-semibold;
+  background: #1e293b;
+  color: #06b6d4;
+}
+
+pre code {
+  @apply bg-transparent p-0 text-xs;
+  color: #e5e7eb;
+}
+
+/* Improved text contrast - темна тема */
+strong {
+  @apply text-white font-semibold;
+}
