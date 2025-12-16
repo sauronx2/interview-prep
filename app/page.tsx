@@ -78,9 +78,6 @@ export default function Home() {
               питань
             </span>
           </div>
-          <div className="mt-6 flex items-center justify-center">
-            <CollapseAllButton />
-          </div>
         </div>
 
         {/* Categories */}
@@ -99,6 +96,9 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* Floating Action Button */}
+      <CollapseAllButton />
     </main>
     </ClientLayout>
   );
