@@ -13,7 +13,7 @@ find docs -mindepth 1 ! -name '.gitkeep' -delete 2>/dev/null || rm -rf docs/*
 
 # Step 2: Build Next.js static export
 echo "📦 Building Next.js static site..."
-npm run build
+npm run build:static
 
 # Step 3: Verify build output
 echo "✅ Verifying build output..."

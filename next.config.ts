@@ -1,8 +1,10 @@
 import type { NextConfig } from 'next';
 
+const isStaticExport = process.env.BUILD_MODE === 'static';
+
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'docs',
+  output: isStaticExport ? 'export' : 'standalone',
+  distDir: isStaticExport ? 'docs' : '.next',
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
