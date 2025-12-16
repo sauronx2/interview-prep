@@ -33,6 +33,7 @@ export function CategorySection({ category }: CategorySectionProps) {
             key={index}
             question={question}
             index={index}
+            questionId={`${category.id}-${index}`}
           />
         ))}
       </div>

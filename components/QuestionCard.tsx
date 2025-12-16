@@ -1,22 +1,24 @@
 'use client';
 
 import { Question } from '@/lib/types';
-import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { MarkdownAnswer } from './MarkdownAnswer';
+import { useQuestions } from './QuestionsProvider';
 
 interface QuestionCardProps {
   question: Question;
   index: number;
+  questionId: string;
 }
 
-export function QuestionCard({ question, index }: QuestionCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export function QuestionCard({ question, index, questionId }: QuestionCardProps) {
+  const { openQuestions, toggleQuestion } = useQuestions();
+  const isOpen = openQuestions.has(questionId);
 
   return (
     <div className="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden bg-white dark:bg-gray-950 transition-all duration-200 hover:shadow-md">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => toggleQuestion(questionId)}
         className="w-full px-6 py-4 flex items-start justify-between text-left gap-4 group"
       >
         <div className="flex-1">
